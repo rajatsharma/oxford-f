@@ -4,8 +4,9 @@ const { wordSearchPromise } = require('./promises/wordsearchpromise')
 
 const wordProcess = async(req, res) => {
   try {
-    var response = await wordSearchPromise(req.params.word);
+    var response = await wordSearchPromise(req.params.word)
   } catch(e) {
+    console.log(e)
     return e.statusCode == '404' ? send(res, 200, { words: [] }) : send(res, 500, { Internal:'We fucked up!' })
   }
   const oxfordJson = JSON.parse(response.body)
