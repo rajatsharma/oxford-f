@@ -3,6 +3,7 @@ const createWordsArray = require('../transformers')
 const tryRequire = require('try-require')
 // const { appId, appKey } = tryRequire('../../secrets/oxfordkeys')
 
+console.log(process.env)
 const wordSearchPromise = wordfragment =>
   request({
     uri: 'https://od-api.oxforddictionaries.com:443/api/v1/entries/en/' + wordfragment,
