@@ -12,7 +12,7 @@ const wordSearchPromise = wordfragment =>
     headers: {
       'Accept': 'application/json',
       'app_id': process.env.OXFORDAPPID,
-      'app_key': process.env.OXFORDAPP
+      'app_key': process.env.OXFORDAPPKEY
     }
   })
 
