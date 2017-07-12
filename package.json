@@ -17,7 +17,8 @@
     "jsonwebtoken": "^7.4.1",
     "micro": "latest",
     "micro-cors": "^0.0.4",
-    "microrouter": "^2.1.1"
+    "microrouter": "^2.1.1",
+    "try-require": "^1.2.1"
   },
   "license": "MIT",
   "devDependencies": {

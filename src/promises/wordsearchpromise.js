@@ -1,6 +1,7 @@
 const request = require('request-promise')
-const { appId, appKey } = require('../../secrets/oxfordkeys')
 const createWordsArray = require('../transformers')
+const tryRequire = require('try-require')
+const { appId, appKey } = tryRequire('../../secrets/oxfordkeys')
 
 const wordSearchPromise = wordfragment =>
   request({
@@ -9,10 +10,9 @@ const wordSearchPromise = wordfragment =>
     resolveWithFullResponse: true,
     headers: {
       'Accept': 'application/json',
-      'app_id': appId,
-      'app_key': appKey
+      'app_id': appId || process.env.OXFORDAPPID,
+      'app_key': appKey || process.env.OXFORDAPPKEY
     }
   })
-
 
 module.exports = { wordSearchPromise }

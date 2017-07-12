@@ -1,12 +1,12 @@
 const jwt = require('jsonwebtoken')
 const fs = require('fs')
-const publicKey = require('../secrets/publickey')
+const tryRequire = require('try-require')
+const publicKey = tryRequire('../secrets/publickey')
 
 const jwtverifyPromise = token => new Promise((resolve, reject) => {
-  jwt.verify(token, publicKey, { algorithms: ['HS256'] }, function(err, decoded) {
+  jwt.verify(token, publicKey || process.env.PUBLICKEY, { algorithms: ['HS256'] }, function(err, decoded) {
     if(err) {
       reject(err)
-      console.log(err)
       return
     }
     resolve(decoded)
