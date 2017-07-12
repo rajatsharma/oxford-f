@@ -10,8 +10,8 @@ const wordSearchPromise = wordfragment =>
     resolveWithFullResponse: true,
     headers: {
       'Accept': 'application/json',
-      'app_id': appId || process.env.OXFORDAPPID,
-      'app_key': appKey || process.env.OXFORDAPP
+      'app_id': process.env.OXFORDAPPID,
+      'app_key': process.env.OXFORDAPP
     }
   })
 
