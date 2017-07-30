@@ -13,7 +13,7 @@ const cors = microCors({ allowMethods: ['GET', 'POST'] })
 module.exports = compose(
   cors,
   ping,
-  jwtcheckr, //All authenticated routes start from here
+  // jwtcheckr, //All authenticated routes start from here
   fn => router(
     get('/search/:word', wordProcess),
     get('/searchv2/:word', wordProcessAll),
