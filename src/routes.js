@@ -27,11 +27,11 @@ const wordProcessAll = async(req, res) => {
   }
   const oxfordJson = JSON.parse(response.body)
   const LexicalEntries = lexicalEntriesFlattener(oxfordJson)
-  const pronounciation = oxfordJson.results[0].lexicalEntries[0].pronunciations[0].audioFile || oxfordJson.results[0].lexicalEntries[0].pronunciations[1].audioFile || undefined
+  const pronounciation = oxfordJson.results[0].lexicalEntries[0].entries[0].pronunciations[0].audioFile || oxfordJson.results[0].lexicalEntries[0].pronunciations[1].audioFile || undefined
   return send(res, 200, { words:LexicalEntries, pronounciation })
 }
 
-const noProcess = async(req,res) => {
+const noProcess = async (req, res) => {
   try {
     var response = await wordSearchPromise(req.params.word)
   } catch(e) {

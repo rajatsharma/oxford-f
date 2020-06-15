@@ -3,17 +3,15 @@
   "version": "0.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "micro",
+    "start": "micro -p 8001",
     "lint": "xo",
     "test": "npm run lint && ava"
   },
   "xo": {
     "extends": "prettier"
   },
-  "engines": {
-    "node": "^7.7.3"
-  },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "jsonwebtoken": "^7.4.1",
     "micro": "latest",
     "micro-cors": "^0.0.4",

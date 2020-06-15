@@ -1,5 +1,5 @@
 'use strict'
-
+require('dotenv').config()
 const { router, get } = require('microrouter')
 
 const microCors = require('micro-cors')

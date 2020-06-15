@@ -5,7 +5,7 @@ const oxfordKeys = tryRequire('./../../secrets/oxfordkeys')
 
 const wordSearchPromise = wordfragment =>
   request({
-    uri: 'https://od-api.oxforddictionaries.com:443/api/v1/entries/en/' + wordfragment,
+    uri: 'https://od-api.oxforddictionaries.com:443/api/v2/entries/en/' + wordfragment,
     method: 'GET',
     resolveWithFullResponse: true,
     headers: {
